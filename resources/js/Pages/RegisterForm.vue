@@ -40,7 +40,7 @@
                                     name="sap_id"
                                     type="tel"
                                     autocomplete="sap_id"
-                                    class="block w-full appearance-none rounded-md border border-slate-300 px-3 py-2 placeholder-slate-400 shadow-sm focus:border-violet-500 focus:outline-none focus:ring-violet-500 sm:text-sm"
+                                    class="block w-full appearance-none rounded-md border border-slate-300 px-3 py-2 placeholder-slate-500 shadow-sm focus:border-violet-500 focus:outline-none focus:ring-violet-500 sm:text-sm"
                                     v-model="form.sap_id"
                                 >
                             </div>
@@ -63,7 +63,7 @@
                                     type="email"
                                     autocomplete="email"
                                     v-model="form.email"
-                                    class="block w-full appearance-none rounded-md border border-slate-300 px-3 py-2 placeholder-slate-400 placeholder:text-xs placeholder:italic shadow-sm focus:border-violet-500 focus:outline-none focus:ring-violet-500 sm:text-sm"
+                                    class="block w-full appearance-none rounded-md border border-slate-300 px-3 py-2 placeholder-slate-500 placeholder:text-xs placeholder:italic shadow-sm focus:border-violet-500 focus:outline-none focus:ring-violet-500 sm:text-sm"
                                     placeholder="ใช้ข้อมูลที่ท่านลงทะเบียนเข้าร่วมงาน"
                                 >
                             </div>
@@ -82,7 +82,7 @@
                                     type="tel"
                                     autocomplete="tel_no"
                                     v-model="form.tel_no"
-                                    class="block w-full appearance-none rounded-md border border-slate-300 px-3 py-2 placeholder-slate-400 placeholder:text-xs placeholder:italic shadow-sm focus:border-violet-500 focus:outline-none focus:ring-violet-500 sm:text-sm"
+                                    class="block w-full appearance-none rounded-md border border-slate-300 px-3 py-2 placeholder-slate-500 placeholder:text-xs placeholder:italic shadow-sm focus:border-violet-500 focus:outline-none focus:ring-violet-500 sm:text-sm"
                                     placeholder="ใช้ข้อมูลที่ท่านลงทะเบียนเข้าร่วมงาน ไม่มีขีดคั่น"
                                 >
                             </div>
