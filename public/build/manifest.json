@@ -1,16 +1,16 @@
 {
-  "_PageLayout-6f50f780.js": {
-    "file": "assets/PageLayout-6f50f780.js",
+  "_PageLayout-df9c2ec3.js": {
+    "file": "assets/PageLayout-df9c2ec3.js",
     "imports": [
-      "_index-1bb83671.js",
+      "_index-259e7072.js",
       "resources/js/app.js"
     ]
   },
-  "_index-1bb83671.js": {
+  "_index-259e7072.js": {
     "assets": [
       "assets/ihtm-95e3d3c1.png"
     ],
-    "file": "assets/index-1bb83671.js",
+    "file": "assets/index-259e7072.js",
     "imports": [
       "resources/js/app.js"
     ]
@@ -59,48 +59,48 @@
     "css": [
       "assets/HomePage-d7d6e39a.css"
     ],
-    "file": "assets/HomePage-94299a9f.js",
+    "file": "assets/HomePage-92cbfa63.js",
     "imports": [
       "resources/js/app.js",
-      "_index-1bb83671.js"
+      "_index-259e7072.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/HomePage.vue"
   },
   "resources/js/Pages/LandingPage.vue": {
-    "file": "assets/LandingPage-3ba48ac7.js",
+    "file": "assets/LandingPage-148ec1fa.js",
     "imports": [
       "resources/js/app.js",
-      "_PageLayout-6f50f780.js",
-      "_index-1bb83671.js"
+      "_PageLayout-df9c2ec3.js",
+      "_index-259e7072.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/LandingPage.vue"
   },
   "resources/js/Pages/RegisterForm.vue": {
-    "file": "assets/RegisterForm-7e66a360.js",
+    "file": "assets/RegisterForm-11a1f0d1.js",
     "imports": [
       "resources/js/app.js",
-      "_PageLayout-6f50f780.js",
-      "_index-1bb83671.js"
+      "_PageLayout-df9c2ec3.js",
+      "_index-259e7072.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/RegisterForm.vue"
   },
   "resources/js/app.css": {
-    "file": "assets/app-ea9b718c.css",
+    "file": "assets/app-badbccb6.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
     "css": [
-      "assets/app-ea9b718c.css"
+      "assets/app-badbccb6.css"
     ],
     "dynamicImports": [
       "resources/js/Pages/HomePage.vue",
       "resources/js/Pages/LandingPage.vue",
       "resources/js/Pages/RegisterForm.vue"
     ],
-    "file": "assets/app-70f46bf2.js",
+    "file": "assets/app-f49710a3.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }
