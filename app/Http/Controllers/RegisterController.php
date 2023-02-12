@@ -56,7 +56,7 @@ class RegisterController extends Controller
         $lineUser = session('lineUser');
         $user = new User();
         $user->line_user_id = $lineUser['id'];
-        $user->name = $lineUser['name'];
+        $user->name = $lineUser['name'] ?? $lineUser['nickname'];
         $user->verify_code = $verifyCode;
         $user->status = $lineUser['status'];
         $user->avatar_url = $lineUser['avatar'];
