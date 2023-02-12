@@ -33,7 +33,7 @@ class LINELoginController extends Controller
         /**
          * @var User $user
          */
-        if (! $user = User::query()->where('line_id', $lineUser->getId())->first()) {
+        if (! $user = User::query()->where('line_user_id', $lineUser->getId())->first()) {
             $request->session()->put('lineUser', [
                 'id' => $lineUser->getId(),
                 'name' => $lineUser->getName(),
