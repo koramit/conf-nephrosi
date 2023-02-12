@@ -1,0 +1,12 @@
+@import 'anime.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    /*page*/
+    .font-k2d {
+        font-family: 'K2D', sans-serif;
+    }
+}
