@@ -42,6 +42,7 @@ class HomeController extends Controller
                                 'speakers' => $e->speakers,
                                 'source' => $e->source,
                                 'slide' => $e->slide,
+                                'id' => $e->id,
                             ]),
 
                     ];
@@ -62,7 +63,10 @@ class HomeController extends Controller
                     'files' => collect($set['files'])->shuffle()->values(),
                 ];
             }),
-            'routeLogout' => route('logout'),
+            'routes' => [
+                'logout' => route('logout'),
+                'episodeViewStore' => route('episode-views.store'),
+            ],
         ]);
     }
 }

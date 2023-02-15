@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EpisodeViewController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LINELoginController;
@@ -57,3 +58,9 @@ Route::post('/upload-user-excel', function (Illuminate\Http\Request $request) {
     return back()->with(['message' => 'OK']);
 })->middleware(['auth'])
 ->name('upload.store');
+
+// /episode-views to store episode views
+Route::post('/episode-views', [EpisodeViewController::class, 'store'])
+    ->middleware(['auth'])
+    ->name('episode-views.store');
+

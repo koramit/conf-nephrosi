@@ -145,7 +145,7 @@
                                             </p>
                                             <button
                                                 class="text-sm font-medium text-violet-500 group-hover:text-slate-700"
-                                                @click="router.delete(routeLogout)"
+                                                @click="router.delete(routes.logout)"
                                             >
                                                 ลงชื่อออก
                                             </button>
@@ -255,7 +255,7 @@
                                 </p>
                                 <button
                                     class="text-sm font-medium text-violet-500 group-hover:text-slate-700"
-                                    @click="router.delete(routeLogout)"
+                                    @click="router.delete(routes.logout)"
                                 >
                                     ลงชื่อออก
                                 </button>
@@ -391,7 +391,7 @@ import 'lightgallery/css/lg-zoom.css';
 const props = defineProps({
     seasonsData: { type: Array, required: true },
     images: { type: Array, required: true },
-    routeLogout: { type: String, required: true },
+    routes: { type: Object, required: true },
 });
 
 const seasons = ref([...props.seasonsData]);
@@ -445,6 +445,11 @@ function selectEpisode(episode) {
         plyr.play();
         sidebarOpen.value = false;
         setTimeout(() => document.getElementById('episode-title').scrollIntoView({behavior: 'smooth'}), 400);
+
+        window.axios
+            .post(props.routes.episodeViewStore, {
+                episode_id: selectedEpisode.value.id
+            }).catch(error => console.log(error));
     });
 }
 </script>
