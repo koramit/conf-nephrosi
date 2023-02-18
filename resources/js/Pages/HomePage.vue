@@ -292,24 +292,53 @@
                     <div class="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
                         <!-- Replace with your content -->
                         <div class="py-4">
-                            <lightgallery
-                                :settings="{ speed: 500, plugins: galleryPlugins }"
-                                class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 xl:gap-10 rounded-lg p-2 border-4 border-dashed border-violet-200"
+                            <div
                                 v-show="showGallery"
                             >
-                                <a
-                                    v-for="(image) in gallery.files"
-                                    :key="image"
-                                    :href="`${gallery.prefix}${image}${gallery.extension}`"
+                                <div
+                                    v-for="(season, key) in images"
+                                    :key="key"
+                                    class="space-y-4 md:space-y-8"
+                                    v-show="true"
                                 >
-                                    <img
-                                        class="object-center object-cover w-full aspect-square border-8 border-white rounded-lg shadow-lg transform hover:border-0 hover:rounded-none hover:scale-110 duration-300 ease-in-out"
-                                        :alt="image"
-                                        :src="`${gallery.prefix}${image}${gallery.extension}`"
-                                        loading="lazy"
+                                    <div
+                                        v-for="(set,setKey) in season.sets"
+                                        :key="setKey"
                                     >
-                                </a>
-                            </lightgallery>
+                                        <button
+                                            class="flex items-center text-2xl font-semibold text-violet-700 underline underline-offset-4"
+                                            @click="set.show = !set.show"
+                                        >
+                                            {{ set.label }}
+                                            <ChevronRightIcon
+                                                class="ml-2 h-5 w-5 text-violet-600 transition duration-200 ease-in-out transform"
+                                                :class="{'rotate-90': set.show}"
+                                            />
+                                        </button>
+                                        <Transition name="slide-fade">
+                                            <lightgallery
+                                                :settings="{ speed: 500, plugins: galleryPlugins }"
+                                                class="mt-2 md:mt-4 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 xl:gap-10 rounded-lg p-2 border-4 border-dashed border-violet-200"
+                                                v-if="set.show"
+                                            >
+                                                <a
+                                                    v-for="(image) in set.images"
+                                                    :key="image"
+                                                    :href="image"
+                                                >
+                                                    <img
+                                                        class="object-center object-cover w-full aspect-square border-8 border-white rounded-lg shadow-lg transform hover:border-0 hover:rounded-none hover:scale-110 duration-300 ease-in-out"
+                                                        :alt="image"
+                                                        :src="image"
+                                                        loading="lazy"
+                                                    >
+                                                </a>
+                                            </lightgallery>
+                                        </Transition>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div
                                 class="rounded-lg p-2 border-4 border-dashed border-violet-200"
                                 v-if="showPlayer"
@@ -390,12 +419,12 @@ import 'lightgallery/css/lg-zoom.css';
 
 const props = defineProps({
     seasonsData: { type: Array, required: true },
-    images: { type: Array, required: true },
+    imagesData: { type: Array, required: true },
     routes: { type: Object, required: true },
 });
 
 const seasons = ref([...props.seasonsData]);
-const gallery = reactive({...props.images[0]});
+const images = reactive({...props.imagesData});
 const galleryPlugins = [lgThumbnail, lgZoom];
 
 let plyr;
